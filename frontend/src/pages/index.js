@@ -109,5 +109,27 @@ export default function Home() {
 		}
 	};
 
+	// TODO: Clean up messy branch logic
+	// Conditionally renders a button based on web app's current state
+	const renderBtn = () => {
+		if (walletConnected) {
+			if (joinedWhitelist) {
+				return (
+					<div>
+						You have joined the whitelist! Keep an eye out for future updates!
+					</div>
+				);
+			} else if (loading) {
+				return <button>Loading, hang tight!</button>;
+			} else {
+				return (
+					<button onClick={addAddressToWhitelist}>Join The Whitelist!</button>
+				);
+			}
+		} else {
+			return <button onClick={connectWallet}>Connect Your Wallet</button>;
+		}
+	};
+
 	return <div></div>;
 }
