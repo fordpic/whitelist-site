@@ -147,16 +147,24 @@ export default function Home() {
 	return (
 		<div>
 			<Head>
-				<title></title>
-				<meta name='description' content='whitelist-site' />
+				<title>Forps Whitelist</title>
+				<meta name='description' content='Forps-Whitelist' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
 			<div>
 				<div>
-					<h1></h1>
-					<div></div>
-					<div>{numWhitelisted} have already joined the whitelist!</div>
+					<h1>Welcome to Forps!</h1>
+					<div>
+						Fordps is a NFT collection that is built entirely for fun and lives
+						on the Goerli testnet. They are a not-so-subtle joke of me (Ford)
+						and the hope is to see all of these minted out one day. As long as
+						there is room on the waitlist, you can mint and trade Forps however
+						you see fit!
+					</div>
+					<div>
+						{numWhitelisted} have already joined the whitelist for Forps!
+					</div>
 					{renderBtn()}
 				</div>
 				<div>
@@ -164,7 +172,7 @@ export default function Home() {
 				</div>
 			</div>
 
-			<footer>Made by Ford Pickert </footer>
+			<footer>Made by Ford Pickert</footer>
 		</div>
 	);
 }
