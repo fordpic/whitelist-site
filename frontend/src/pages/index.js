@@ -116,8 +116,8 @@ export default function Home() {
 		if (walletConnected) {
 			if (joinedWhitelist) {
 				return (
-					<div className='text-center mx-auto'>
-						You have joined the whitelist! Keep an eye out for future updates!
+					<div className='text-center mx-auto text-blue-600 text-lg font-bold pb-4'>
+						You have successfully joined the whitelist!
 					</div>
 				);
 			} else if (loading) {
