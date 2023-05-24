@@ -116,19 +116,33 @@ export default function Home() {
 		if (walletConnected) {
 			if (joinedWhitelist) {
 				return (
-					<div>
+					<div className='text-center mx-auto'>
 						You have joined the whitelist! Keep an eye out for future updates!
 					</div>
 				);
 			} else if (loading) {
-				return <button>Loading, hang tight!</button>;
+				return (
+					<button className='h-8 p-8 mb-8 rounded-lg flex mx-auto items-center text-white text-center bg-blue-600'>
+						Loading, hang tight!
+					</button>
+				);
 			} else {
 				return (
-					<button onClick={addAddressToWhitelist}>Join The Whitelist!</button>
+					<button
+						onClick={addAddressToWhitelist}
+						className='h-8 p-8 mb-8 rounded-lg flex mx-auto items-center text-white text-center bg-blue-600'>
+						Join Whitelist
+					</button>
 				);
 			}
 		} else {
-			return <button onClick={connectWallet}>Connect Your Wallet</button>;
+			return (
+				<button
+					onClick={connectWallet}
+					className='h-8 p-8 mb-8 rounded-lg flex mx-auto items-center text-white text-center bg-blue-600'>
+					Connect Your Wallet
+				</button>
+			);
 		}
 	};
 
@@ -152,27 +166,33 @@ export default function Home() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<div>
+			<div className='min-h-screen flex flex-col text-center justify-center bg-gradient-to-r from-violet-500 to-fuchsia-500'>
 				<div>
-					<h1>Welcome to Forps!</h1>
-					<div>
-						Fordps is a NFT collection that is built entirely for fun and lives
-						on the Goerli testnet. They are a not-so-subtle joke of me (Ford)
-						and the hope is to see all of these minted out one day. As long as
-						there is room on the waitlist, you can mint and trade Forps however
-						you see fit!
+					<img src='./forp.jpg' className='h-[70%] mx-auto' />
+					<h1 className='text-4xl font-extrabold'>Welcome to Forps!</h1>
+
+					<div className='p-4 m-12 mx-40 font-semibold text-white'>
+						<span className='font-bold text-blue-600'>Forps</span> is a NFT
+						collection that is built entirely for fun and lives on the Goerli
+						testnet. They are a not-so-subtle joke of me{' '}
+						<span className='font-bold text-blue-600'>(Ford)</span> and the hope
+						is to see all of these minted out one day. As long as there is room
+						on the whitelist, you can mint and trade Forps however you see fit!
 					</div>
-					<div>
-						{numWhitelisted} have already joined the whitelist for Forps!
+
+					<div className='p-4 m-12 mx-40 font-semibold text-white'>
+						Simply connect your wallet, switch the network to Goerli, and add
+						your wallet address to the whitelist to be eligible to mint a{' '}
+						<span className='font-bold text-blue-600'>Forp</span>!
+					</div>
+
+					<div className='m-6 font-semibold text-white'>
+						{numWhitelisted}/20 have already joined the whitelist for{' '}
+						<span className='font-bold text-blue-600'>Forps</span>
 					</div>
 					{renderBtn()}
 				</div>
-				<div>
-					<img />
-				</div>
 			</div>
-
-			<footer>Made by Ford Pickert</footer>
 		</div>
 	);
 }
