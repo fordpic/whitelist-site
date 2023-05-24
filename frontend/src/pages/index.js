@@ -14,11 +14,12 @@ export default function Home() {
 	const web3ModalRef = useRef();
 
 	// Helper function that returns an ETH RPC object with or without signing privileges
+	// Read-access only (without signing privileges) is the default
 	const getProviderOrSigner = async (needSigner = false) => {
 		const provider = await web3ModalRef.current.connect();
 		const web3Provider = new providers.Web3Provider(provider);
 
-		// If user not connected
+		// If user not on correct network (Goerli)
 		const { chainId } = await web3Provider.getNetwork();
 		if (chainId !== 5) {
 			window.alert('Please change your network to Goerli');
@@ -60,7 +61,7 @@ export default function Home() {
 
 	const getNumberOfWhitelisted = async () => {
 		try {
-			// Just provider for read txn
+			// Just need provider to make a read txn
 			const provider = await getProviderOrSigner();
 			const whitelistContract = new Contract(
 				WHITELIST_CONTRACT_ADDY,
@@ -131,5 +132,39 @@ export default function Home() {
 		}
 	};
 
-	return <div></div>;
+	// Assigns MetaMask instance to ref if no connected wallet on render
+	useEffect(() => {
+		if (!walletConnected) {
+			web3ModalRef.current = new Web3Modal({
+				network: 'goerli',
+				providerOptions: {},
+				disableInjectedProvider: false,
+			});
+			connectWallet();
+		}
+	}, [walletConnected]);
+
+	return (
+		<div>
+			<Head>
+				<title></title>
+				<meta name='description' content='whitelist-site' />
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
+
+			<div>
+				<div>
+					<h1></h1>
+					<div></div>
+					<div>{numWhitelisted} have already joined the whitelist!</div>
+					{renderBtn()}
+				</div>
+				<div>
+					<img />
+				</div>
+			</div>
+
+			<footer>Made by Ford Pickert </footer>
+		</div>
+	);
 }
