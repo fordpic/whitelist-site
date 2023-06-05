@@ -166,7 +166,7 @@ export default function Home() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<div className='min-h-screen flex flex-col text-center justify-center bg-gradient-to-r from-violet-500 to-fuchsia-500'>
+			<div className='min-h-screen flex flex-col text-center justify-center bg-gradient-to-r from-green-500 to-orange-500'>
 				<div>
 					<img src='./forp.jpg' className='h-[70%] mx-auto' />
 					<h1 className='text-4xl font-extrabold'>Welcome to Forps!</h1>
