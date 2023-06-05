@@ -2,11 +2,11 @@
 
 This repo contains the code for both the whitelist contract and the frontend UI for interacting with the Forps NFT collection whitelist, which must be joined before a user can mint a Forp.
 
-Users first must connect to the site by using their wallet to sign in; once connected, simply select the button to add your wallet to the Forps whitelist! The UI will let you know whether or not there is space on the whitelist or if you have already whitelisted the connected wallet - **each wallet can mint a maximum of 1 Forp NFT**.
+Users first must connect to the site by using their wallet to sign in; once connected to Goerli, simply select the button to add your wallet to the Forps whitelist! The UI will let you know whether or not there is space on the whitelist or if you have already whitelisted the connected wallet - **each wallet can mint a maximum of 1 Forp NFT**.
 
-Whitelisted users can mint their Forp NFTs from the minting site, which can be found here: [Forps Mint Site]()
+Whitelisted users can mint their Forp NFTs from the minting site, which can be found here: [Forps Mint Site](https://forp-collection.vercel.app/)
 
-The repo containing all of the contracts and frontend code for the Forps NFT collection can be found here: [Forps NFT Collection]()
+The repo containing all of the contracts and frontend code for the Forps NFT collection can be found here: [Forps NFT Collection](https://github.com/fordpic/forp-collection)
 
 ## Technologies Used
 
