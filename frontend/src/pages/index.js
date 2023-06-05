@@ -5,6 +5,7 @@ import { providers, Contract } from 'ethers';
 import { WHITELIST_CONTRACT_ADDY, abi } from '../../constants';
 
 export default function Home() {
+	// STATE
 	const [walletConnected, setWalletConnected] = useState(false);
 	const [joinedWhitelist, setJoinedWhitelist] = useState(false);
 	const [loading, setLoading] = useState(false);
@@ -34,7 +35,7 @@ export default function Home() {
 		return web3Provider;
 	};
 
-	// Functions
+	// FUNCTIONS
 	const addAddressToWhitelist = async () => {
 		try {
 			// Need a signer for a write txn
