@@ -172,7 +172,7 @@ export default function Home() {
 					<h1 className='text-4xl font-extrabold'>Welcome to Forps!</h1>
 
 					<div className='p-4 m-12 mx-40 font-semibold text-white'>
-						<span className='font-bold text-blue-600'>Forps</span> is a NFT
+						<span className='font-bold text-blue-600'>Forps</span> is an NFT
 						collection that is built entirely for fun and lives on the Goerli
 						testnet. They are a not-so-subtle joke of me{' '}
 						<span className='font-bold text-blue-600'>(Ford)</span> and the hope
