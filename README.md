@@ -15,6 +15,7 @@ The repo containing all of the contracts and frontend code for the Forps NFT col
 - TailwindCSS for frontend styling
 - Ethers for the web3 frontend library
 - Hardhat for smart contract deployment
+- Quicknode for the RPC endpoint
 
 ## Next Steps
 
